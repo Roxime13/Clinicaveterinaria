@@ -1,6 +1,5 @@
-use proyectofinal;
 create database proyectofinal;
-drop database proyectofinal;
+use proyectofinal;
 
 create table clientes(
 id INT NOT NULL AUTO_INCREMENT,
@@ -32,8 +31,6 @@ select * from Mascotas;
 
 insert into Mascotas(nombre, especie, edad, sexo, id_fk) values ('Pili', 'Perro', '4', 'Femenino', 2);
 
-drop table Mascotas;
-
 create table Tratamientos(
 id INT NOT NULL AUTO_INCREMENT,
 nombre_veterinario VARCHAR(80) NOT NULL,
@@ -43,7 +40,6 @@ PRIMARY KEY(id),
 FOREIGN KEY (id_fkmascotas) REFERENCES Mascotas(id)
 );
 select * from tratamientos;
-drop table Tratamientos;
 
 insert into Tratamientos(nombre_veterinario, sintomas,  id_fkmascotas) values ('Marisa', 'Le duele la barriga', 2);
 
